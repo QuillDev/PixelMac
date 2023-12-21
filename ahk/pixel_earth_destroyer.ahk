@@ -9,6 +9,11 @@ SetDefaultMouseSpeed 0
 SetWinDelay -1
 
 DebugMode := { Use: false, Check: false }
+
+^F10:: Reload()
+^F11::Pause
+^F12:: ExitApp()
+
 F1:: {
     if (WinActive("ahk_class UnrealWindow")) {
         mouseX := 0
@@ -25,10 +30,6 @@ F1:: {
     }
     return
 }
-
-^F10:: Reload()
-^F11::Pause
-^F12:: ExitApp()
 
 $XButton1:: {
     While (Utility.GameActive() && GetKeyState("XButton1", "p"))
