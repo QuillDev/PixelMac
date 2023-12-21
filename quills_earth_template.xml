@@ -1,0 +1,19 @@
+﻿<patches>
+    <patch file="skill3_contextscriptdata_destroyer_g1.xml">
+        <select-nodes query="/table/contextscript[@job='역사']/stance[@stance='파괴']">
+            <append-buffer>
+<![CDATA[
+<TEMPLATE_MARKER>
+]]>
+		</append-buffer>
+            <select-node query="./layer[decision[condition[@skill='65013']]]">
+                <assign-node-key node-key="layer:hk_rework" />
+            </select-node>
+            <select-node query="./hk_rework">
+                <select-nodes query="./layer">
+                    <insert-move-before node-key="layer:hk_rework" />
+                </select-nodes>
+            </select-node>
+        </select-nodes>
+    </patch>
+</patches>

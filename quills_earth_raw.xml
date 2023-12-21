@@ -1,0 +1,55 @@
+﻿<hk_rework>
+    <!-- 
+        Skill        | ID
+        MCleave      | 121038
+        Wrath 1      | 121023
+        Wrath 2      | 121024
+        Wrath 3      | 121025
+        Emberstomp   | 121070
+        Smash        | 121100
+        Ram          | 121050
+        Stone Shield | 121060
+     -->
+
+    <!-- Move -> G -->
+    <layer>
+        <!-- Mighty Cleave -> G -->
+        <decision>
+            <condition hk="off-cd" skill="121038" />
+            <condition skill="121038" />
+            <result special-1="121038" key-status="unpress" control-mode="classic" />
+            <result special-1="121038" key-status="unpress" control-mode="bns" />
+        </decision>
+        <!-- Emberstomp -> G -->
+        <decision>
+            <condition hk="off-cd" skill="121070" />
+            <condition skill="121070" />
+            <result special-1="121070" control-mode="classic" />
+            <result special-1="121070" control-mode="bns" />
+        </decision>
+        <!-- Smash -> G -->
+        <decision>
+            <condition hk="off-cd" skill="121100" />
+            <condition skill="121100" />
+            <result special-1="121100" control-mode="classic" />
+            <result special-1="121100" control-mode="bns" />
+        </decision>
+        <!-- Wrath 3 -> G -->
+        <decision>
+            <condition skill="121023" />
+            <result context-1="121023" context-ui-effect="combo" control-mode="classic" />
+            <result context-1="121023" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+
+    <!-- V Stun -> 2 -->
+    <layer>
+        <decision>
+            <condition hk="on-cd" skill="121050" />
+            <condition hk="off-cd" skill="121060" />
+            <condition skill="121060" variation-id="9" />
+            <result skillbar-2="121060" control-mode="classic" />
+            <result skillbar-2="121060" control-mode="bns" />
+        </decision>
+    </layer>
+</hk_rework>

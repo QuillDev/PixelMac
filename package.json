@@ -1,0 +1,12 @@
+{
+  "name": "quill",
+  "version": "1.0.0",
+  "description": "",
+  "main": "compile.js",
+  "type": "module",
+  "scripts": {
+    "compile": "node compile.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
