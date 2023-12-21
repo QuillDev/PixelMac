@@ -16,6 +16,24 @@
         Stone Shield | 121060
      -->
 
+    <layer>
+        <!-- Wrath 3 -> G -->
+        <decision>
+            <condition skill="121025" />
+            <result special-1="121025" context-ui-effect="combo" control-mode="classic" />
+            <result special-1="121025" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="121024" />
+            <result context-1="121024" context-ui-effect="combo" control-mode="classic" />
+            <result context-1="121024" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="121023" />
+            <result context-1="121023" context-ui-effect="combo" control-mode="classic" />
+            <result context-1="121023" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
     <!-- Move -> G -->
     <layer>
         <!-- Mighty Cleave -> G -->
@@ -39,12 +57,6 @@
             <result special-1="121100" control-mode="classic" />
             <result special-1="121100" control-mode="bns" />
         </decision>
-        <!-- Wrath 3 -> G -->
-        <decision>
-            <condition skill="121023" />
-            <result context-1="121023" context-ui-effect="combo" control-mode="classic" />
-            <result context-1="121023" context-ui-effect="combo" control-mode="bns" />
-        </decision>
     </layer>
 
     <!-- V Stun -> 2 -->
@@ -58,7 +70,6 @@
         </decision>
     </layer>
 </hk_rework>
-
 ]]>
 		</append-buffer>
             <select-node query="./layer[decision[condition[@skill='65013']]]">

@@ -152,59 +152,59 @@ class Rotations
             }
         }
 
-        if (Skill.Up(Skill.MIGHTY_CLEAVE)) {
-            While (Skill.UseIfUp(Skill.MIGHTY_CLEAVE)) {
-                Sleep 10
-            }
-
-            ; Smash
-            While (!Skill.Up(Skill.MIGHTY_CLEAVE) && Skill.UseIfUp(Skill.SMASH)) {
-                Sleep 10
-            }
-
-            ; Emberstomp
-            While (!Skill.Up(Skill.MIGHTY_CLEAVE) && Skill.UseIfUp(Skill.EMBERSTOMP)) {
-                Sleep 10
-            }
+        While (Skill.UseIfUp(Skill.MIGHTY_CLEAVE)) {
+            Sleep 10
         }
-        else {
-            if (Skill.Up(Skill.AWK_MIGHTY_CLEAVE)) {
-                While (Skill.UseIfUp(Skill.AWK_MIGHTY_CLEAVE)) {
-                    Sleep 10
-                }
 
-                ; Use smash
-                While (!Skill.Up(Skill.AWK_MIGHTY_CLEAVE) && Skill.UseIfUp(Skill.SMASH)) {
-                    Sleep 10
-                }
+        ; Smash
+        While (Skill.UseIfUp(Skill.SMASH)) {
+            Sleep 10
+        }
 
-                ; Use Emberstomp
-                While (!Skill.Up(Skill.AWK_MIGHTY_CLEAVE) && Skill.UseIfUp(Skill.EMBERSTOMP)) {
+        ; Emberstomp
+        While (Skill.UseIfUp(Skill.EMBERSTOMP)) {
+            Sleep 10
+        }
+
+        ; Soulburn rotation
+        if (Skill.Up(Skill.AWK_MIGHTY_CLEAVE)) {
+            While (Skill.UseIfUp(Skill.AWK_MIGHTY_CLEAVE)) {
+                Sleep 10
+            }
+
+            ; Use smash
+            While (!Skill.Up(Skill.AWK_MIGHTY_CLEAVE) && Skill.UseIfUp(Skill.SMASH)) {
+                Sleep 10
+            }
+
+            ; Use Emberstomp
+            While (!Skill.Up(Skill.AWK_MIGHTY_CLEAVE) && Skill.UseIfUp(Skill.EMBERSTOMP)) {
+                Sleep 10
+            }
+            
+            return
+        } else {
+            if (Skill.Up(Skill.WRATH_3) && Skill.Up(Skill.AWK_CLEAVE)) {
+                While (Skill.Up(Skill.WRATH_3) && Skill.UseIfUp(Skill.AWK_CLEAVE)) {
                     Sleep 10
                 }
             } else {
-                if (Skill.Up(Skill.WRATH_3) && Skill.Up(Skill.AWK_CLEAVE)) {
-                    While (Skill.Up(Skill.WRATH_3) && Skill.UseIfUp(Skill.AWK_CLEAVE)) {
+                if (Skill.Up(Skill.WRATH_3) && !Skill.Up(Skill.AWK_CLEAVE)) {
+                    While (Skill.UseIfUp(Skill.WRATH_3)) {
+                        Sleep 10
+                    }
+
+                    Sleep 45
+                    While (Skill.UseIfUp(Skill.CLEAVE)) {
                         Sleep 10
                     }
                 } else {
-                    if (Skill.Up(Skill.WRATH_3) && !Skill.Up(Skill.AWK_CLEAVE)) {
-                        While (Skill.UseIfUp(Skill.WRATH_3)) {
-                            Sleep 10
-                        }
-
-                        Sleep 45
-                        While (Skill.UseIfUp(Skill.CLEAVE)) {
-                            Sleep 10
-                        }
-                    } else {
-                        ; spam wrath
-                        Skill.Use(Skill.WRATH)
-                        Sleep 5
-                    }
+                    ; spam wrath
+                    Skill.Use(Skill.WRATH)
+                    Sleep 5
                 }
-                return
             }
+            return
         }
     }
 
