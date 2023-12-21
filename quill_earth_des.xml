@@ -58,6 +58,7 @@
         </decision>
     </layer>
 </hk_rework>
+
 ]]>
 		</append-buffer>
             <select-node query="./layer[decision[condition[@skill='65013']]]">
