@@ -79,7 +79,7 @@ class Skill {
             case Skill.FURY:
                 return Utility.GetColor(772, 929) == "0x9B8269"
             case Skill.STONE_WEDGE:
-                return Utility.GetColor(1077, 928) == "0x796F59"
+                return Utility.GetColor(1075, 940) == "0x883C0F"
             case Skill.AWK_CLEAVE:
                 return false
             case Skill.AWK_MIGHTY_CLEAVE:
@@ -181,7 +181,7 @@ class Rotations
             While (!Skill.Up(Skill.AWK_MIGHTY_CLEAVE) && Skill.UseIfUp(Skill.EMBERSTOMP)) {
                 Sleep 10
             }
-            
+
             return
         } else {
             if (Skill.Up(Skill.WRATH_3) && Skill.Up(Skill.AWK_CLEAVE)) {
