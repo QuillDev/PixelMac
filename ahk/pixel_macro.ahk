@@ -10,7 +10,7 @@ SetMouseDelay -1
 SetDefaultMouseSpeed 0
 SetWinDelay -1
 
-DebugMode := { Use: true, Check: false }
+DebugMode := { Use: false, Check: false }
 DELAY := 7
 
 global current_spec := spec_type.LIST[1]
@@ -22,7 +22,7 @@ global current_spec := spec_type.LIST[1]
 ^F8::Pause
 ^F9:: ExitApp()
 ; Spec Selection
-^j:: {
+^+j:: {
     selection_gui := Gui()
     dropdown := selection_gui.AddDropDownList(, spec_type.LIST)
     submit := selection_gui.AddButton(, "Submit")

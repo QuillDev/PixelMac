@@ -2,7 +2,7 @@
 #Include %A_ScriptDir%\lib\spec.ahk
 #Include %A_ScriptDir%\lib\utility.ahk
 
-delay := 7
+delay := 8
 class earth_destroyer extends bns_class {
     __New() {
         this.skillset := skill_set()
@@ -21,7 +21,7 @@ class earth_destroyer extends bns_class {
         this.skillset.register("awk_mighty_cleave",
             skill("g", () => false))
         this.skillset.register("awk_cleave",
-            skill("g", () => Utility.GetColor(1129, 937) == "0x149DB0"))
+            skill("t", () => Utility.GetColor(1129, 936) == "0x0FC5F1"))
         this.skillset.register("wrath_3",
             skill("g", () => Utility.GetColor(1231, 926) == "0x78726C"))
         this.skillset.register("wrath",
