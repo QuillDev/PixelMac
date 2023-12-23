@@ -23,10 +23,15 @@ class earth_destroyer extends bns_class {
         this.skillset.register("awk_cleave",
             skill("t", () => Utility.GetColor(1129, 936) == "0x0FC5F1"))
         this.skillset.register("wrath_3",
-            skill("g", () => Utility.GetColor(1231, 926) == "0x78726C"))
+            skill("g", () => Utility.GetColor(1236, 929) == "0xA2A286"))
         this.skillset.register("wrath",
             skill("r", () => Utility.GetColor(1232, 932) == "0x443F40"))
-
+        this.skillset.register("judgement",
+            skill("r", () => Utility.GetColor(1074, 929) == "0xAE7A29"))
+        this.skillset.register("judgement_2",
+            skill("r", () => Utility.GetColor(1074, 928) == "0x1869CE"))
+        this.skillset.register("fury_buff",
+            skill("", () => Utility.GetColor(8, 4) == "0x819AB4"))
     }
 
     DoRotation() {
@@ -51,7 +56,7 @@ class earth_destroyer extends bns_class {
             Sleep(delay)
         }
 
-        ; On W3 use cleave or Awk Cleave
+        ; Context dependent anicancel (2w1c) || (2j1c)
         if (this.skillset.is_skill_ready("wrath_3")) {
             sid := this.skillset.is_skill_ready("awk_cleave") ? "awk_cleave" : "cleave"
             while (this.skillset.is_skill_ready("wrath_3")) {
@@ -60,7 +65,9 @@ class earth_destroyer extends bns_class {
             }
         }
 
-        this.skillset.use("wrath")
+
+        filler_sid := this.skillset.is_skill_ready("fury_buff") ? "wrath" : "cleave"
+        this.skillset.use(filler_sid)
         Sleep(delay)
     }
 }

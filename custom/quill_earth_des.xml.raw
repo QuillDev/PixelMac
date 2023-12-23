@@ -11,8 +11,9 @@
         Stone Shield | 121060
      -->
 
+    <!-- Wrath -->
     <layer>
-        <!-- Wrath 3 -> G -->
+        <!-- Wrath 3 to G -->
         <decision>
             <condition skill="121025" />
             <result special-1="121025" context-ui-effect="combo" control-mode="classic" />
@@ -29,6 +30,27 @@
             <result context-1="121023" context-ui-effect="combo" control-mode="bns" />
         </decision>
     </layer>
+
+    <!-- Judgement -->
+    <layer>
+        <!-- Judgement 3 to G -->
+        <decision>
+            <condition skill="121003" />
+            <result special-1="121003" context-ui-effect="combo" control-mode="classic" />
+            <result special-1="121003" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="121002" />
+            <result context-1="121002" context-ui-effect="combo" control-mode="classic" />
+            <result context-1="121002" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="121001" />
+            <result context-1="121001" context-ui-effect="combo" control-mode="classic" />
+            <result context-1="121001" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+
     <!-- Move -> G -->
     <layer>
         <!-- Mighty Cleave -> G -->
